@@ -1,3 +1,4 @@
+import React from 'react'
 
 import { useState } from "react"
 
@@ -15,13 +16,13 @@ const Input = ( {addtask} ) => {
             alert('Add a task')
         }
         else{
-            document.querySelector('input').value = ''
+            document.querySelector('input').value = '';
             addtask({text, status})
             
         }
     }
     return (
-        <form onSubmit = {onSubmit}>
+        <form className="input-field" onSubmit = {onSubmit}>
             <input value = {text} onKeyDown = {(b) => something(b)} onChange = {(e) => setText(e.target.value)} type="text" className="input" />
         </form>
     )

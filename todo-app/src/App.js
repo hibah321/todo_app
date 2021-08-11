@@ -34,6 +34,15 @@ function App() {
     <h1>To Do</h1>
     <Input addtask={addtask} />
     <Tasks taskss={ taskss } onDelete ={OnDelete} />  
+    <div className="footer">
+      <p><span id="items-left"></span> items left</p>
+        <div>
+          <button>All</button>
+          <button>Active</button>
+          <button>Completed</button>
+        </div>
+        <button>Clear Completed</button>
+    </div>
   </div>
   );
   
