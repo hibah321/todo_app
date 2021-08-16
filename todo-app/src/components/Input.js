@@ -16,9 +16,8 @@ const Input = ( {addtask} ) => {
             alert('Add a task')
         }
         else{
-            document.querySelector('input').value = '';
             addtask({text, status})
-            
+            setText('')
         }
     }
     return (
