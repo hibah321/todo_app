@@ -73,12 +73,14 @@ input[type ="text"], .tasks{
   border-radius: 50%;
   vertical-align: middle;
   padding: 1px;
-  background-image: url('src/icon-check.svg');
+  border: 1px solid var(--clr-cut);
+  /* border-color: var(--clr-cut);  */
   -webkit-appearance: none;
   outline: none;
   cursor: pointer;
 }
 [type ="checkbox"]:checked{
+  border: none;
   background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 }
 
@@ -124,6 +126,10 @@ input[type='text'], table, tr{
 }
 .task > h3{
   font-weight: 400;
+}
+.completed > h3{
+  text-decoration: line-through;
+  color: var(--clr-cut);
 }
 .task > svg{
   margin-left: auto;
