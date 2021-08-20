@@ -33,7 +33,11 @@ function App() {
       task.id===id ? {...task, status: !task.status} : task)
     )
   }
-  const[state, setState] = useState()
+  const clear = () => {
+    console.log('f')
+    setTaskss(taskss.filter((task) => task.status === false));
+  }
+  const[state, setState] = useState('all')
 
   return (
   <div className="container">
@@ -43,16 +47,16 @@ function App() {
       <Tasks taskss={ taskss } onDelete ={OnDelete} onCheck= {onCheck} state = {state}/>  
       <tr className="footer">
           <td>
-            <p><span id="items-left"></span> items left</p>
+            <p>{taskss.length} items left</p>
           </td>
           <td>
             <div>
-              <button onClick = {() => setState(null)}>All</button>
-              <button onClick = {() => setState(false)} >Active</button>
-              <button onChange = {() => setState(true)}>Completed</button>
+              <button onClick = {() => setState('all')}>All</button>
+              <button onClick = {() => setState('active')} >Active</button>
+              <button onClick= {() => setState('completed')}>Completed</button>
             </div>
           </td>
-          <td><button>Clear Completed</button></td>
+          <td><button onClick = {clear}>Clear Completed</button></td>
       </tr>
     </table>
   </div>
